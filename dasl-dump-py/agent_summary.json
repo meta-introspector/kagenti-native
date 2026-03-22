@@ -1,0 +1,16 @@
+{
+  "createdAt": "2026-03-18T13:00:00Z",
+  "description": "Resolves GitHub issues via LLM",
+  "labels": {
+    "framework": "LangGraph",
+    "protocol": [
+      "a2a",
+      "mcp"
+    ],
+    "type": "agent"
+  },
+  "name": "git-issue-agent",
+  "namespace": "default",
+  "status": "running",
+  "workloadType": "deployment"
+}

@@ -1,0 +1,15 @@
+[Unit]
+Description=kagenti-daemon native agent management API
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/mnt/data1/time-2026/03-march/18/kagenti-native
+ExecStart=/mnt/data1/time-2026/03-march/18/kagenti-native/target/debug/kagenti-daemon
+Restart=on-failure
+RestartSec=5s
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

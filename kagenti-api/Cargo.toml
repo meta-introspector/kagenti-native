@@ -1,0 +1,14 @@
+[package]
+name = "kagenti-api"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+axum = { workspace = true }
+erdfa-publish = { git = "https://github.com/Escaped-RDFa/erdfa-publish-rs.git", rev = "95e9e0e" }
+
+[[bin]]
+name = "dump-types"
+path = "src/dump_types.rs"

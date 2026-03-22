@@ -1,0 +1,13 @@
+{
+  "description": "Web search via MCP",
+  "labels": {
+    "protocol": [
+      "mcp"
+    ],
+    "type": "tool"
+  },
+  "name": "web-search-tool",
+  "namespace": "default",
+  "status": "running",
+  "workloadType": "statefulset"
+}

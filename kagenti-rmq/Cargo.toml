@@ -1,0 +1,12 @@
+[package]
+name = "kagenti-rmq"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+kagenti-api = { path = "../kagenti-api" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true }
+lapin = "2"
+futures-lite = "2"
