@@ -1137,6 +1137,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "kagenti-tmux"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "hex",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tokio",
+]
+
+[[package]]
 name = "kagenti-wg"
 version = "0.1.0"
 dependencies = [
