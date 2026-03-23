@@ -1,5 +1,5 @@
 [workspace]
-members = ["kagenti-api", "kagenti-daemon", "kagenti-rmq", "kagenti-nix", "kagenti-wg"]
+members = ["kagenti-api", "kagenti-daemon", "kagenti-rmq", "kagenti-nix", "kagenti-wg", "kagenti-rec"]
 resolver = "2"
 
 [workspace.dependencies]
