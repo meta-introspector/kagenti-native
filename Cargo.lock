@@ -1127,6 +1127,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "kagenti-wg"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "serde",
+ "serde_json",
+ "tokio",
+]
+
+[[package]]
 name = "lapin"
 version = "2.5.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
