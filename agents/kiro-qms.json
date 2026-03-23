@@ -1,0 +1,15 @@
+{
+  "name": "kiro-qms",
+  "namespace": "zone42",
+  "nixPackage": "path:///mnt/data1/zones/42/uucp/kiro-qms",
+  "command": ["nix", "run", "--impure"],
+  "env": [
+    {"name": "SHARD_ID", "value": "23"},
+    {"name": "QMS_DOC_ID", "value": "QMS-MONSTER-001"}
+  ],
+  "ports": [],
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/zones/42/uucp/kiro-qms",
+    "restartPolicy": "on-failure"
+  }
+}

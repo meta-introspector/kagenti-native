@@ -1,0 +1,19 @@
+{
+  "name": "kiro1-shard42",
+  "namespace": "zone42",
+  "nixPackage": "path:///mnt/data1/shards/42/home/kiro-1",
+  "command": ["bash", "-c", "source config/kiro1.conf && exec bash --norc"],
+  "env": [
+    {"name": "AGENT_NAME", "value": "kiro-1"},
+    {"name": "AGENT_SHARD", "value": "42"},
+    {"name": "AGENT_GODEL", "value": "139"},
+    {"name": "AGENT_HE_WITNESS", "value": "19321"},
+    {"name": "SELINUX_LABEL", "value": "shard_sidechan_t"}
+  ],
+  "ports": [],
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/shards/42/home/kiro-1",
+    "user": "kiro1",
+    "restartPolicy": "on-failure"
+  }
+}

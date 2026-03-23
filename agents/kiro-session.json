@@ -1,0 +1,16 @@
+{
+  "name": "kiro-session",
+  "namespace": "zone42",
+  "nixPackage": "path:///mnt/data1/kiro",
+  "command": ["kiro-cli", "chat"],
+  "env": [
+    {"name": "KIRO_LOG_DIR", "value": "/mnt/data1/kiro/logs"},
+    {"name": "KIRO_SESSION_DIR", "value": "/mnt/data1/kiro/sessions"}
+  ],
+  "ports": [],
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/kiro",
+    "user": "kiro",
+    "restartPolicy": "on-failure"
+  }
+}

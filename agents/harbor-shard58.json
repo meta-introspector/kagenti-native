@@ -1,0 +1,16 @@
+{
+  "name": "harbor-shard58",
+  "namespace": "shard58",
+  "nixPackage": "path:///mnt/data1/git/shards/shard70-work/shard58/harbor",
+  "command": ["nix", "develop", "-c", "npm", "run", "tauri", "dev"],
+  "env": [
+    {"name": "FRACTRAN_ENABLED", "value": "true"},
+    {"name": "FRACTRAN_SHARD", "value": "58"},
+    {"name": "FRACTRAN_DATA", "value": "/mnt/data1/introspector/shard58/harbor/fractran"}
+  ],
+  "ports": [{"name": "http", "port": 8080}],
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/git/shards/shard70-work/shard58/harbor",
+    "restartPolicy": "on-failure"
+  }
+}

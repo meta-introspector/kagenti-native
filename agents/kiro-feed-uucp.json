@@ -1,0 +1,16 @@
+{
+  "name": "kiro-feed-uucp",
+  "namespace": "zone42",
+  "nixPackage": "path:///mnt/data1/kiro",
+  "command": ["/mnt/data1/kiro/bin/feed-uucp"],
+  "env": [
+    {"name": "UUCP_DIR", "value": "/mnt/data1/zones/42/uucp/spool"},
+    {"name": "OLLAMA_HOST", "value": "http://localhost:11434"}
+  ],
+  "ports": [],
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/kiro",
+    "user": "kiro",
+    "restartPolicy": "on-failure"
+  }
+}

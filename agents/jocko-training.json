@@ -1,0 +1,13 @@
+{
+  "name": "jocko-training",
+  "namespace": "zone42",
+  "nixPackage": "path:///nix/store/dkgw5nh7ckix4xmpw6lmn6jklakfwqky-swi-prolog-9.2.9",
+  "command": ["swipl", "-q", "-s", "/nix/store/1ns9fiig5652p3q851h30v6h2f202mv1-jocko_execute.pl"],
+  "env": [],
+  "ports": [],
+  "systemdOverrides": {
+    "workingDirectory": "/home/jocko",
+    "user": "jocko",
+    "restartPolicy": "no"
+  }
+}
