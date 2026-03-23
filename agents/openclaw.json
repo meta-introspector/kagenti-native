@@ -1,0 +1,15 @@
+{
+  "name": "openclaw",
+  "namespace": "default",
+  "nixPackage": "path:///mnt/data1/git/shards/shard70-work/shard-0/openclaw",
+  "command": ["nix", "run", "--impure"],
+  "env": [
+    {"name": "SHARD_ID", "value": "0"},
+    {"name": "OPENCLAW_CONFIG", "value": "/home/mdupont/.openclaw/shard-0"}
+  ],
+  "ports": [],
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/git/shards/shard70-work/shard-0/openclaw",
+    "restartPolicy": "on-failure"
+  }
+}

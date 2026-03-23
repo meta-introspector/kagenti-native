@@ -1,0 +1,12 @@
+{
+  "name": "moltboot",
+  "namespace": "default",
+  "nixPackage": "path:///mnt/data1/git/shards/shard70-work/moltboot",
+  "command": ["nix", "develop", "--command", "cargo", "run", "--release"],
+  "env": [],
+  "ports": [],
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/git/shards/shard70-work/moltboot",
+    "restartPolicy": "on-failure"
+  }
+}

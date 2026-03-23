@@ -1,0 +1,17 @@
+{
+  "name": "moltis",
+  "namespace": "default",
+  "nixPackage": "path:///mnt/data1/git/solana.solfunmeme.com/moltis.git",
+  "command": ["moltis", "--config", "/home/mdupont/.config/moltis/main/moltis.toml"],
+  "env": [
+    {"name": "MOLTIS_INSTANCE", "value": "main"},
+    {"name": "MOLTIS_CONFIG_DIR", "value": "/home/mdupont/.config/moltis/main"},
+    {"name": "MOLTIS_DATA_DIR", "value": "/home/mdupont/.local/share/moltis/main"},
+    {"name": "OLLAMA_API_BASE", "value": "http://localhost:11434"}
+  ],
+  "ports": [{"name": "http", "port": 8080}],
+  "systemdOverrides": {
+    "workingDirectory": "/home/mdupont/.local/share/moltis/main",
+    "restartPolicy": "on-failure"
+  }
+}

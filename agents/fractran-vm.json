@@ -1,0 +1,15 @@
+{
+  "name": "fractran-vm",
+  "namespace": "default",
+  "nixPackage": "path:///home/mdupont/.emacs.d.kiro/kiro.el-research/fractran-vm",
+  "command": ["cargo", "run", "--release", "--", "serve"],
+  "env": [
+    {"name": "FRACTRAN_PORT", "value": "8107"},
+    {"name": "AMQP_URI", "value": "amqp://monster:gyroscope@localhost:5672/%2Fmonster"}
+  ],
+  "ports": [{"name": "http", "port": 8107}],
+  "systemdOverrides": {
+    "workingDirectory": "/home/mdupont/.emacs.d.kiro/kiro.el-research/fractran-vm",
+    "restartPolicy": "on-failure"
+  }
+}
