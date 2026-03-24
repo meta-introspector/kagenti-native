@@ -1,0 +1,13 @@
+{
+  "name": "nixwars-bbs",
+  "namespace": "default",
+  "command": ["/home/mdupont/git/meta-introspector/kagenti-native/scripts/nixwars-ship", "bbs"],
+  "env": [],
+  "ports": [{"name": "http", "port": 8112, "protocol": "tcp"}],
+  "systemdOverrides": {
+    "restartPolicy": "on-failure",
+    "workingDirectory": "/mnt/data1/time-2026/03-march/11/www/nixwars"
+  },
+  "source": "/mnt/data1/time-2026/03-march/11/www/nixwars/bbs.html",
+  "description": "nixwars ship: bbs — serves bbs.html on port 8112"
+}

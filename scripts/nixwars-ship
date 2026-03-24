@@ -1,0 +1,65 @@
+#!/bin/bash
+# nixwars-ship — serve a single nixwars game mode on its own port
+# Usage: nixwars-ship <ship> [port]
+# Ships: tournament bbs url flying modern pilot all
+set -euo pipefail
+
+NIXWARS="/mnt/data1/time-2026/03-march/11/www/nixwars"
+
+declare -A SHIP_PAGE=(
+  [tournament]="index.html"
+  [bbs]="bbs.html"
+  [url]="url-only.html"
+  [flying]="flying-fractran.html"
+  [modern]="index.html"
+  [pilot]="pilot.html"
+  [play]="play.html"
+)
+
+declare -A SHIP_PORT=(
+  [tournament]=8111
+  [bbs]=8112
+  [url]=8113
+  [flying]=8114
+  [modern]=8115
+  [pilot]=8116
+  [play]=8117
+)
+
+ship="${1:-}"
+port="${2:-}"
+
+if [ -z "$ship" ] || [ "$ship" = "--help" ]; then
+  echo "nixwars-ship — serve a single game mode"
+  echo ""
+  echo "Usage: nixwars-ship <ship> [port]"
+  echo ""
+  echo "Ships:"
+  for s in tournament bbs url flying modern pilot play; do
+    echo "  $s  (port ${SHIP_PORT[$s]})  → ${SHIP_PAGE[$s]}"
+  done
+  echo ""
+  echo "  all  — launch all ships"
+  exit 0
+fi
+
+if [ "$ship" = "all" ]; then
+  for s in tournament bbs url flying modern pilot play; do
+    echo "Launching $s on port ${SHIP_PORT[$s]}..."
+    "$0" "$s" &
+  done
+  echo "All ships launched. Press Ctrl+C to stop."
+  wait
+  exit 0
+fi
+
+page="${SHIP_PAGE[$ship]:-}"
+if [ -z "$page" ]; then
+  echo "Unknown ship: $ship" >&2
+  exit 1
+fi
+
+port="${port:-${SHIP_PORT[$ship]}}"
+
+echo "🚀 nixwars:$ship → $page on port $port"
+exec python3 -m http.server "$port" --directory "$NIXWARS" --bind 127.0.0.1

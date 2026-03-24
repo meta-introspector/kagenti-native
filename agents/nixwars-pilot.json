@@ -1,0 +1,13 @@
+{
+  "name": "nixwars-pilot",
+  "namespace": "default",
+  "command": ["/home/mdupont/git/meta-introspector/kagenti-native/scripts/nixwars-ship", "pilot"],
+  "env": [],
+  "ports": [{"name": "http", "port": 8116, "protocol": "tcp"}],
+  "systemdOverrides": {
+    "restartPolicy": "on-failure",
+    "workingDirectory": "/mnt/data1/time-2026/03-march/11/www/nixwars"
+  },
+  "source": "/mnt/data1/time-2026/03-march/11/www/nixwars/pilot.html",
+  "description": "nixwars ship: pilot — serves pilot.html on port 8116"
+}

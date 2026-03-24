@@ -1,0 +1,13 @@
+{
+  "name": "nixwars-url",
+  "namespace": "default",
+  "command": ["/home/mdupont/git/meta-introspector/kagenti-native/scripts/nixwars-ship", "url"],
+  "env": [],
+  "ports": [{"name": "http", "port": 8113, "protocol": "tcp"}],
+  "systemdOverrides": {
+    "restartPolicy": "on-failure",
+    "workingDirectory": "/mnt/data1/time-2026/03-march/11/www/nixwars"
+  },
+  "source": "/mnt/data1/time-2026/03-march/11/www/nixwars/url-only.html",
+  "description": "nixwars ship: url — serves url-only.html on port 8113"
+}

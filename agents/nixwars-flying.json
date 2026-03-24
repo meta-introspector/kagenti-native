@@ -1,0 +1,13 @@
+{
+  "name": "nixwars-flying",
+  "namespace": "default",
+  "command": ["/home/mdupont/git/meta-introspector/kagenti-native/scripts/nixwars-ship", "flying"],
+  "env": [],
+  "ports": [{"name": "http", "port": 8114, "protocol": "tcp"}],
+  "systemdOverrides": {
+    "restartPolicy": "on-failure",
+    "workingDirectory": "/mnt/data1/time-2026/03-march/11/www/nixwars"
+  },
+  "source": "/mnt/data1/time-2026/03-march/11/www/nixwars/flying-fractran.html",
+  "description": "nixwars ship: flying — serves flying-fractran.html on port 8114"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "nixwars-play",
+  "namespace": "default",
+  "command": ["/home/mdupont/git/meta-introspector/kagenti-native/scripts/nixwars-ship", "play"],
+  "env": [],
+  "ports": [{"name": "http", "port": 8117, "protocol": "tcp"}],
+  "systemdOverrides": {
+    "restartPolicy": "on-failure",
+    "workingDirectory": "/mnt/data1/time-2026/03-march/11/www/nixwars"
+  },
+  "source": "/mnt/data1/time-2026/03-march/11/www/nixwars/play.html",
+  "description": "nixwars ship: play — serves play.html on port 8117"
+}

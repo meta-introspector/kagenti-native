@@ -1,0 +1,13 @@
+{
+  "name": "nixwars-modern",
+  "namespace": "default",
+  "command": ["/home/mdupont/git/meta-introspector/kagenti-native/scripts/nixwars-ship", "modern"],
+  "env": [],
+  "ports": [{"name": "http", "port": 8115, "protocol": "tcp"}],
+  "systemdOverrides": {
+    "restartPolicy": "on-failure",
+    "workingDirectory": "/mnt/data1/time-2026/03-march/11/www/nixwars"
+  },
+  "source": "/mnt/data1/time-2026/03-march/11/www/nixwars/index.html",
+  "description": "nixwars ship: modern — serves index.html on port 8115"
+}
