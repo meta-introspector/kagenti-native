@@ -1,0 +1,14 @@
+{
+  "name": "zombie-driver2",
+  "namespace": "default",
+  "nixPackage": "path:///home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/zombie_driver2",
+  "command": ["cargo", "run", "--bin", "self_analyzer"],
+  "env": [],
+  "ports": [],
+  "systemdOverrides": {
+    "restartPolicy": "on-failure",
+    "workingDirectory": "/home/mdupont/zombie_driver2"
+  },
+  "source": "/home/mdupont/nix/vendor/rust/cargo2nix/submodules/rust-build/compiler/zombie_driver2/",
+  "description": "rust-eigenmatrix / zombie_driver2 — rustc driver with monadic plugin system, spectral AST analysis (36k prime-encoded paths), complexity lattice (43 orbits), LMFDB integration, P2P verification. 208 .rs files, syn_moonshine workspace member."
+}

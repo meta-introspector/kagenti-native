@@ -1,0 +1,19 @@
+{
+  "name": "nixwars",
+  "namespace": "default",
+  "nixPackage": "path:///mnt/data1/nix-store/store/47i1dg1x65awkq1aq9ghm875p3dbjyj4-nixwars-content",
+  "command": ["/bin/bash", "-c", "mkdir -p /var/lib/nixwars && echo '{\"state\":30,\"layers\":71}' > /var/lib/nixwars/state.json && ln -sf /nix/store/47i1dg1x65awkq1aq9ghm875p3dbjyj4-nixwars-content /var/www/nixwars"],
+  "env": [
+    {"name": "FRACTRAN_STATE", "value": "30"},
+    {"name": "LAYERS", "value": "71"},
+    {"name": "SECTORS", "value": "59"},
+    {"name": "ZONES", "value": "47"}
+  ],
+  "ports": [],
+  "systemdOverrides": {
+    "restartPolicy": "no",
+    "workingDirectory": "/var/lib/nixwars"
+  },
+  "source": "/mnt/data1/time-2026/03-march/11/www/nixwars/",
+  "description": "Nix-Wars game server — FRACTRAN-derived HTML game with ZX81 BBS, flying-fractran, tournament engine. Served via nginx as static content."
+}

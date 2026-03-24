@@ -1,0 +1,21 @@
+{
+  "name": "zos-server",
+  "namespace": "default",
+  "nixPackage": "path:///home/mdupont/terraform/services/submodules/zos-server",
+  "command": ["cargo", "run", "--bin", "zkwasm_server"],
+  "env": [
+    {"name": "ZOS_PLUGIN_DIR", "value": "/home/mdupont/zos-server/plugins"}
+  ],
+  "ports": [
+    {"name": "zos-dev", "port": 8080, "protocol": "tcp"},
+    {"name": "zos-prod", "port": 8081, "protocol": "tcp"},
+    {"name": "zos-qa", "port": 8082, "protocol": "tcp"}
+  ],
+  "systemdOverrides": {
+    "restartPolicy": "on-failure",
+    "workingDirectory": "/home/mdupont/terraform/services/submodules/zos-server"
+  },
+  "source": "/home/mdupont/terraform/services/submodules/zos-server/",
+  "description": "ZOS Server — zkWASM executor with monadic plugin driver (libloading C ABI). Hub that registers and exposes services via dynamic .so plugins. Plugins: lobster, monster_manifold, monster_voa_training, scp71, system_discovery, zone42_mycorrhizal, harbor. Sub-projects: omnisearch, a11y-gui, github-manager, noc-manager, plugin-registry.",
+  "plugins": ["liblobster_zos_plugin.so", "libmonster_manifold.so", "libmonster_voa_training_plugin.so", "libscp71.so", "libsystem_discovery.so", "libzone42_mycorrhizal.so"]
+}

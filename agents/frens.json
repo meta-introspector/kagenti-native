@@ -1,0 +1,17 @@
+{
+  "name": "frens",
+  "namespace": "default",
+  "nixPackage": "path:///mnt/data1/git/shards/shard70-work",
+  "command": ["/bin/bash", "-c", "cd /mnt/data1/git/shards/shard70-work && ./scripts/witness_all_frens.sh"],
+  "env": [
+    {"name": "FRENS_TOKEN", "value": "E6QQQ1xECshESosESjgtGvnLaHXJSkDcHPV6pd2RQv22"},
+    {"name": "FRENS_CHAIN", "value": "solana"}
+  ],
+  "ports": [],
+  "systemdOverrides": {
+    "restartPolicy": "on-failure",
+    "workingDirectory": "/mnt/data1/git/shards/shard70-work"
+  },
+  "source": "/mnt/data1/git/shards/shard70-work/frens/",
+  "description": "FREN token registry and zkTLS witness system — CICADA-71 challenge framework, Solana SPL token, TLSNotary proofs of Solscan pages, FREN phone number encoding."
+}
