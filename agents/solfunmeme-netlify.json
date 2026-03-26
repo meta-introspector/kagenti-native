@@ -1,0 +1,24 @@
+{
+  "name": "solfunmeme-netlify",
+  "namespace": "solfunmeme",
+  "description": "Netlify API zip deploy",
+  "nixPackage": "nixpkgs#curl",
+  "command": [
+    "bash",
+    "-c",
+    "cd docs && zip -qr /tmp/netlify.zip . && curl -s -X POST https://api.netlify.com/api/v1/sites/5f5c0101-b40a-4c7d-be82-9ee44ee4a1c6/deploys -H \"Authorization: Bearer $(cat ~/.netlify)\" -H 'Content-Type: application/zip' --data-binary @/tmp/netlify.zip"
+  ],
+  "ports": [],
+  "env": [],
+  "labels": {
+    "protocol": [
+      "http",
+      "netlify-api"
+    ],
+    "framework": "dioxus",
+    "type": "static"
+  },
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/meta-introspector/submodules/solfunmeme-dioxus"
+  }
+}

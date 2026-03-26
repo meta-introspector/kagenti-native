@@ -1,0 +1,36 @@
+{
+  "name": "solfunmeme-supabase",
+  "namespace": "solfunmeme",
+  "description": "Supabase PostgreSQL backend",
+  "nixPackage": "external",
+  "command": [
+    "echo",
+    "Managed by Supabase cloud"
+  ],
+  "ports": [
+    {
+      "name": "postgrest",
+      "port": 443,
+      "protocol": "tcp"
+    }
+  ],
+  "env": [
+    {
+      "name": "SUPABASE_URL",
+      "value": "https://opczaaftecjpremkwwxi.supabase.co"
+    },
+    {
+      "name": "SUPABASE_ANON_KEY",
+      "value": "file:~/.solfunmeme/supabase-anon-key"
+    }
+  ],
+  "labels": {
+    "protocol": [
+      "http",
+      "postgrest"
+    ],
+    "framework": "supabase",
+    "type": "database"
+  },
+  "systemdOverrides": {}
+}

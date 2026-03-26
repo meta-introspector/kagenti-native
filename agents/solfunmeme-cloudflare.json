@@ -1,0 +1,37 @@
+{
+  "name": "solfunmeme-cloudflare",
+  "namespace": "solfunmeme",
+  "description": "Cloudflare Pages deploy",
+  "nixPackage": "nixpkgs#nodejs_22",
+  "command": [
+    "npx",
+    "wrangler",
+    "pages",
+    "deploy",
+    "docs/",
+    "--project-name=solfunmeme-dioxus",
+    "--branch=main"
+  ],
+  "ports": [],
+  "env": [
+    {
+      "name": "CLOUDFLARE_API_TOKEN",
+      "value": "file:~/.cloudflare-pages"
+    },
+    {
+      "name": "CLOUDFLARE_ACCOUNT_ID",
+      "value": "0ceffbadd0a04623896f5317a1e40d94"
+    }
+  ],
+  "labels": {
+    "protocol": [
+      "http",
+      "wrangler"
+    ],
+    "framework": "dioxus",
+    "type": "cdn"
+  },
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/meta-introspector/submodules/solfunmeme-dioxus"
+  }
+}

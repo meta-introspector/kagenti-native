@@ -1,0 +1,21 @@
+{
+  "name": "solfunmeme-render",
+  "namespace": "solfunmeme",
+  "description": "Render auto-deploy via GitHub",
+  "nixPackage": "path:///mnt/data1/meta-introspector/submodules/solfunmeme-dioxus",
+  "command": [
+    "echo",
+    "Render auto-deploys from GitHub push"
+  ],
+  "ports": [],
+  "env": [],
+  "labels": {
+    "protocol": [
+      "http",
+      "git"
+    ],
+    "framework": "dioxus",
+    "type": "static"
+  },
+  "systemdOverrides": {}
+}

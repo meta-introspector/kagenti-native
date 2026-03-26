@@ -1,0 +1,30 @@
+{
+  "name": "solfunmeme-huggingface",
+  "namespace": "solfunmeme",
+  "description": "HuggingFace Spaces Docker deploy",
+  "nixPackage": "nixpkgs#python3",
+  "command": [
+    "python3",
+    "-c",
+    "from huggingface_hub import HfApi; HfApi().upload_folder(folder_path='docs',repo_id='introspector/solfunmeme-dioxus',repo_type='space',commit_message='kagenti deploy')"
+  ],
+  "ports": [
+    {
+      "name": "http",
+      "port": 7860,
+      "protocol": "tcp"
+    }
+  ],
+  "env": [],
+  "labels": {
+    "protocol": [
+      "http",
+      "hf-api"
+    ],
+    "framework": "dioxus",
+    "type": "docker"
+  },
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/meta-introspector/submodules/solfunmeme-dioxus"
+  }
+}

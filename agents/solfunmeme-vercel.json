@@ -1,0 +1,25 @@
+{
+  "name": "solfunmeme-vercel",
+  "namespace": "solfunmeme",
+  "description": "Vercel auto-deploy via git push",
+  "nixPackage": "path:///mnt/data1/meta-introspector/submodules/solfunmeme-dioxus",
+  "command": [
+    "git",
+    "push",
+    "jmikedupont2",
+    "HEAD:main"
+  ],
+  "ports": [],
+  "env": [],
+  "labels": {
+    "protocol": [
+      "http",
+      "git"
+    ],
+    "framework": "dioxus",
+    "type": "edge"
+  },
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/meta-introspector/submodules/solfunmeme-dioxus"
+  }
+}

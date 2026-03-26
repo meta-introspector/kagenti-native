@@ -1,0 +1,24 @@
+{
+  "name": "solfunmeme-oracle-oci",
+  "namespace": "solfunmeme",
+  "description": "Oracle Cloud Object Storage deploy",
+  "nixPackage": "nixpkgs#python3",
+  "command": [
+    "python3",
+    "-c",
+    "import oci,os,mimetypes;c=oci.object_storage.ObjectStorageClient(oci.config.from_file('~/.solfunmeme-keys/oci_config'));ns=c.get_namespace().data;[c.put_object(ns,'solfunmeme-dioxus',os.path.relpath(os.path.join(r,f),'docs'),open(os.path.join(r,f),'rb'),content_type='application/wasm' if f.endswith('.wasm') else mimetypes.guess_type(os.path.join(r,f))[0] or 'application/octet-stream') for r,_,fs in os.walk('docs') for f in fs]"
+  ],
+  "ports": [],
+  "env": [],
+  "labels": {
+    "protocol": [
+      "http",
+      "oci-sdk"
+    ],
+    "framework": "dioxus",
+    "type": "object-storage"
+  },
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/meta-introspector/submodules/solfunmeme-dioxus"
+  }
+}

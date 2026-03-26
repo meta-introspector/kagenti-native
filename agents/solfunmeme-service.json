@@ -1,0 +1,32 @@
+{
+  "name": "solfunmeme-service",
+  "namespace": "solfunmeme",
+  "description": "Backend API: pastebin, mesh, telemetry, metrics",
+  "nixPackage": "path:///home/mdupont/erdfa-publish",
+  "command": [
+    "./target/release/solfunmeme-service",
+    "serve",
+    "--bind",
+    "0.0.0.0:7780"
+  ],
+  "ports": [
+    {
+      "name": "http",
+      "port": 7780,
+      "protocol": "tcp"
+    }
+  ],
+  "env": [],
+  "labels": {
+    "protocol": [
+      "http",
+      "amqp"
+    ],
+    "framework": "rust",
+    "type": "api"
+  },
+  "systemdOverrides": {
+    "workingDirectory": "/home/mdupont/erdfa-publish",
+    "restartPolicy": "on-failure"
+  }
+}

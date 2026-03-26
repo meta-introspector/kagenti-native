@@ -1,0 +1,25 @@
+{
+  "name": "solfunmeme-github-pages",
+  "namespace": "solfunmeme",
+  "description": "GitHub Pages static deploy",
+  "nixPackage": "path:///mnt/data1/meta-introspector/submodules/solfunmeme-dioxus",
+  "command": [
+    "git",
+    "push",
+    "origin",
+    "HEAD:main"
+  ],
+  "ports": [],
+  "env": [],
+  "labels": {
+    "protocol": [
+      "http",
+      "git"
+    ],
+    "framework": "dioxus",
+    "type": "static"
+  },
+  "systemdOverrides": {
+    "workingDirectory": "/mnt/data1/meta-introspector/submodules/solfunmeme-dioxus"
+  }
+}
