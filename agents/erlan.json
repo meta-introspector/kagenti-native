@@ -1,0 +1,14 @@
+{
+  "name": "erlan",
+  "namespace": "nixwars",
+  "description": "Erlan RPG engine — 7 continents, combat, economy, magic (deadsg235)",
+  "nixPackage": "path:///home/mdupont/git/github.com/deadsg235/erlan",
+  "command": ["python", "-m", "erlan-core.server.app"],
+  "env": [],
+  "ports": [{"name": "http", "port": 8180, "protocol": "tcp"}],
+  "labels": {"protocol": ["http"], "framework": "flask", "type": "game-server"},
+  "systemdOverrides": {
+    "workingDirectory": "/home/mdupont/git/github.com/deadsg235/erlan",
+    "restartPolicy": "on-failure"
+  }
+}
